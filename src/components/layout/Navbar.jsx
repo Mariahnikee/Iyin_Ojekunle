@@ -67,9 +67,9 @@ const SideNavigation = () => {
         <div className="flex items-center justify-between px-6 py-5">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#CFFAF4] to-[#FF6B4A] flex items-center justify-center shadow-lg">
+            {/* <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#CFFAF4] to-[#FF6B4A] flex items-center justify-center shadow-lg">
               <Heart size={20} className="text-white" />
-            </div>
+            </div> */}
             <span className="font-bold tracking-wider text-white text-lg">
               Iyin Ojekunle
             </span>
@@ -107,14 +107,14 @@ const SideNavigation = () => {
             
             {/* CTA Button in Mobile Menu */}
             <div className="pt-4 mt-4 border-t border-white/10">
-              <a
+              {/* <a
                 href="#book"
                 className="flex items-center justify-center gap-2 w-full bg-linear-to-r from-[#FF6B4A] to-[#FF8A70] text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsSidebarOpen(false)}
               >
                 <Book size={18} />
                 <span>Buy the Book</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -29,9 +29,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#CFFAF4] to-[#FF6B4A] flex items-center justify-center shadow-lg">
+            {/* <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#CFFAF4] to-[#FF6B4A] flex items-center justify-center shadow-lg">
               <Heart size={20} className="text-white" />
-            </div>
+            </div> */}
             <span className="text-xl font-bold tracking-wider">Iyin Ojekunle</span>
           </div>
 
@@ -67,11 +67,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-6 mb-8 text-sm text-white/80">
           <div className="flex items-center gap-2">
             <Mail size={16} />
-            <a href="mailto:iyin@example.com" className="hover:underline">iyin@example.com</a>
+            <a href="mailto:iyin@example.com" className="hover:underline">contact@iyinojekunle.com</a>
           </div>
           <div className="flex items-center gap-2">
             <Phone size={16} />
-            <a href="tel:+2348012345678" className="hover:underline">+234 801 234 5678</a>
+            <a href="tel:+2348012345678" className="hover:underline">+1 (860) xxx xxx</a>
           </div>
         </div>
 
