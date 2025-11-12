@@ -6,7 +6,7 @@ import MainLayout from "./components/layout/Mainlayout";
 import Home from "./pages/home/Home";
 import Event from "./pages/home/Event";
 import Resources from "./pages/home/Resources";
-import Booking from "./pages/home/Booking";
+import Speaker from "./pages/home/Speaker";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route index element={<Home />} />
            <Route path="event" element={<Event />} />
           <Route path="Resources" element={<Resources />} />
-          <Route path="booking" element={<Booking />} />
+          <Route path="Speaker" element={<Speaker />} />
          
         </Route>
       </Routes>
