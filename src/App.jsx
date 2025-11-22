@@ -4,9 +4,9 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import MainLayout from "./components/layout/Mainlayout";
 import Home from "./pages/home/Home";
-import Event from "./pages/home/Event";
 import Resources from "./pages/home/Resources";
-import Speaker from "./pages/home/Speaker";
+import Speaking from "./pages/home/Speaking";
+import Contact from "./pages/home/Contact";
 
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-           <Route path="event" element={<Event />} />
-          <Route path="Resources" element={<Resources />} />
-          <Route path="Speaker" element={<Speaker />} />
+          <Route path="resources" element={<Resources />} />
+          <Route path="speaking" element={<Speaking />} />
+          <Route path="contact" element={<Contact />} />
          
         </Route>
       </Routes>

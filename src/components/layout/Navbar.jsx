@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Heart, Book, Users, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom"; // ✅ Import Link and useLocation
 
 const SideNavigation = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation(); // track current route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,43 +15,57 @@ const SideNavigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Each nav item now points to a real route
   const navItems = [
-    { name: "HOME", icon: Heart },
-    { name: "ABOUT", icon: Heart },
-    { name: "RESOURCES", icon: Book },
-    { name: "SPEAKING", icon: Users },
-    { name: "CONTACT", icon: Mail },
+    { name: "HOME", icon: Heart, path: "/" },
+    { name: "RESOURCES", icon: Book, path: "/resources" },
+    { name: "SPEAKING", icon: Users, path: "/speaking" },
+    { name: "CONTACT", icon: Mail, path: "/contact" },
   ];
 
   return (
     <>
-      {/* ===== Desktop Sidebar (visible ≥1024px) ===== */}
+      {/* ===== Desktop Sidebar ===== */}
       <aside className="hidden lg:flex fixed top-0 left-0 h-full w-24 bg-linear-to-b from-[#006D6F] to-[#004D4F] text-white flex-col items-center justify-between z-50 shadow-2xl">
         {/* Logo / Brand */}
         <div className="flex-1 flex items-center justify-center py-8">
           <div className="transform -rotate-90 whitespace-nowrap origin-center">
-            <span className="text-sm font-bold tracking-[0.4em] hover:text-[#CFFAF4] transition-colors duration-300 cursor-pointer">
+            <Link
+              to="/"
+              className="text-sm font-bold tracking-[0.4em] hover:text-[#CFFAF4] transition-colors duration-300"
+            >
               IYIN OJEKUNLE
-            </span>
+            </Link>
           </div>
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center gap-10 pb-12">
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={`#${item.name.toLowerCase()}`}
-              className="group relative flex items-center justify-center"
-            >
-              <div className="absolute left-1/2 transform -translate-x-1/2 -rotate-90 whitespace-nowrap text-xs font-semibold tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                {item.name}
-              </div>
-              <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#FF6B4A] hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
-                <item.icon size={18} />
-              </div>
-            </a>
-          ))}
+        <nav className="flex flex-col items-center gap-12 pb-16">
+          {navItems.map((item, index) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={index}
+                to={item.path}
+                className={`group relative flex items-center justify-center ${
+                  isActive ? "text-[#FF6B4A]" : ""
+                }`}
+              >
+                <div className="absolute left-1/2 transform -translate-x-1/2 -rotate-90 whitespace-nowrap text-xs font-semibold tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  {item.name}
+                </div>
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${
+                    isActive
+                      ? "bg-[#FF6B4A]"
+                      : "bg-white/10 backdrop-blur-sm hover:bg-[#FF6B4A]"
+                  }`}
+                >
+                  <item.icon size={18} />
+                </div>
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Decorative Element */}
@@ -58,27 +74,28 @@ const SideNavigation = () => {
         </div>
       </aside>
 
-      {/* ===== Mobile/Tablet Top Navigation (visible <1024px) ===== */}
-      <div className={`lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-linear-to-r from-[#006D6F] to-[#004D4F] shadow-xl' 
-          : 'bg-linear-to-r from-[#006D6F]/95 to-[#004D4F]/95 backdrop-blur-md'
-      }`}>
+      {/* ===== Mobile Nav (Top Bar) ===== */}
+      <div
+        className={`lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-linear-to-r from-[#006D6F] to-[#004D4F] shadow-xl"
+            : "bg-linear-to-r from-[#006D6F]/95 to-[#004D4F]/95 backdrop-blur-md"
+        }`}
+      >
         <div className="flex items-center justify-between px-6 py-5">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            {/* <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#CFFAF4] to-[#FF6B4A] flex items-center justify-center shadow-lg">
-              <Heart size={20} className="text-white" />
-            </div> */}
-            <span className="font-bold tracking-wider text-white text-lg">
-              Iyin Ojekunle
-            </span>
-          </div>
+          <Link
+            to="/"
+            className="font-bold tracking-wider text-white text-lg"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            Iyin Ojekunle
+          </Link>
 
           {/* Hamburger Button */}
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="relative w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#FF6B4A] transition-all duration-300 hover:scale-110"
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#FF6B4A] transition-all duration-300 hover:scale-110"
           >
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,9 +109,9 @@ const SideNavigation = () => {
         >
           <div className="bg-linear-to-b from-[#004D4F] to-[#003D3F] backdrop-blur-lg px-6 py-6 space-y-1 border-t border-white/10">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={`#${item.name.toLowerCase()}`}
+                to={item.path}
                 className="group flex items-center gap-4 px-4 py-3 rounded-xl text-white font-semibold hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2"
                 onClick={() => setIsSidebarOpen(false)}
               >
@@ -102,25 +119,13 @@ const SideNavigation = () => {
                   <item.icon size={16} />
                 </div>
                 <span className="text-sm tracking-wider">{item.name}</span>
-              </a>
+              </Link>
             ))}
-            
-            {/* CTA Button in Mobile Menu */}
-            <div className="pt-4 mt-4 border-t border-white/10">
-              {/* <a
-                href="#book"
-                className="flex items-center justify-center gap-2 w-full bg-linear-to-r from-[#FF6B4A] to-[#FF8A70] text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <Book size={18} />
-                <span>Buy the Book</span>
-              </a> */}
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Spacer for content (so content isn't hidden under nav) */}
+      {/* Spacer so content isn't hidden */}
       <div className="h-20 lg:h-0 lg:ml-24"></div>
     </>
   );
