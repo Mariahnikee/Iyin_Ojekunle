@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Heart, Book, Users, UserCircle } from "lucide-react";
+import { Menu, X, Heart, Book, Contact, UserCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom"; // ✅ Import Link and useLocation
 
 const SideNavigation = () => {
@@ -20,7 +20,7 @@ const SideNavigation = () => {
     { name: "HOME", icon: Heart, path: "/" },
     { name: "AUTHOR", icon: UserCircle, path: "/author" },
     { name: "RESOURCES", icon: Book, path: "/resources" },
-    { name: "SPEAKING", icon: Users, path: "/speaking" },
+    { name: "SPEAKING", icon: Contact, path: "/speaking" },
   ];
 
   return (

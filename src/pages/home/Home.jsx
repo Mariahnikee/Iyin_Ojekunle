@@ -166,7 +166,8 @@ export default function LandingPage() {
                   Christ's hope in every community she touches.
                 </p>
               </div>
-
+              
+              <Link to="/author">
               <button className="mt-8 group bg-linear-to-r from-[#006D6F] to-[#008B8D] text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
                 Get to Know Iyin
                 <ArrowRight
@@ -174,6 +175,7 @@ export default function LandingPage() {
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -200,7 +202,7 @@ export default function LandingPage() {
             brings stories of hope and healing to help others rediscover their
             faith and purpose.
           </p>
-            <Link to="/contact">
+            <Link to="/speaking">
           <button className="group bg-linear-to-r from-[#006D6F] to-[#008B8D] text-white px-10 py-5 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg">
             Request Speaking Engagement
             <Mail
