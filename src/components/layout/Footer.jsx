@@ -13,10 +13,10 @@ const Footer = () => {
 
 
   const navLinks = [
-    { name: "Home", href: "/home" },
-    { name: "Author", href: "/author" },
-    { name: "Resources", href: "/resources" },
-    { name: "Speaking", href: "/speaking" },
+    { name: "Home", path: "/home" },
+    { name: "Author", path: "/author" },
+    { name: "Resources", path: "/resources" },
+    { name: "Speaking", path: "/speaking" },
   ];
 
   return (
@@ -36,17 +36,17 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <nav className="flex flex-wrap justify-center gap-6">
-            {navLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="text-white/70 hover:text-white text-sm font-medium transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+         <nav className="flex flex-wrap justify-center gap-6">
+  {navLinks.map((link, index) => (
+    <a
+      key={index}
+      href={link.link || link.path}
+      className="text-white/70 hover:text-white text-sm font-medium transition-colors duration-300"
+    >
+      {link.name}
+    </a>
+  ))}
+</nav>
 
           {/* Social Links */}
           <div className="flex gap-3">
