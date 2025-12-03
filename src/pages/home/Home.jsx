@@ -47,13 +47,19 @@ export default function LandingPage() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <button className="group bg-[#FF6B4A] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 inline-flex items-center gap-2 transform hover:scale-105">
-                BUY THE BOOK
-                <ArrowRight
-                  size={20}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </button>
+             <a
+  href="https://www.amazon.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="group bg-[#FF6B4A] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 inline-flex items-center gap-2 transform hover:scale-105"
+>
+  BUY THE BOOK
+  <ArrowRight
+    size={20}
+    className="group-hover:translate-x-1 transition-transform"
+  />
+</a>
+
               <Link to="/resources">
                 <button className="bg-white/90 backdrop-blur-sm text-[#006D6F] px-8 py-4 rounded-full font-semibold hover:bg-white hover:shadow-xl transition-all duration-300 border-2 border-[#006D6F]/20 transform hover:scale-105">
                   Explore Resources
@@ -152,7 +158,7 @@ export default function LandingPage() {
                 <p>
                   She has organized international fundraisers, sponsored
                   children through humanitarian programs, and served in public
-                  health projects—uniting compassion with excellence and faith
+                  health projects uniting compassion with excellence and faith
                   in action.
                 </p>
                 <p className="font-medium text-[#006D6F] text-xl">
@@ -283,13 +289,18 @@ export default function LandingPage() {
             must-read for anyone seeking peace and clarity in their own calling.
           </p>
 
-          <button className="group bg-[#FF6B4A] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg">
-            Order Your Copy
-            <ArrowRight
-              size={22}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </button>
+          <a
+  href="https://www.amazon.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="group bg-[#FF6B4A] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg"
+>
+   Order Your Copy
+  <ArrowRight
+    size={22}
+    className="group-hover:translate-x-1 transition-transform"
+  />
+</a>
         </div>
       </section>
 

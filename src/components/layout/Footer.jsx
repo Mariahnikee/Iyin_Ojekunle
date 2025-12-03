@@ -4,12 +4,13 @@ import { Heart, Instagram, Facebook, Twitter, Linkedin, Mail, Phone } from "luci
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
+ const socialLinks = [
+  { icon: Instagram, href: "https://instagram.com/iyinojekunle", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/iyinojekunle", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com/iyinojekunle", label: "Twitter" },
+  { icon: Linkedin, href: "https://linkedin.com/in/iyinojekunle", label: "LinkedIn" },
+];
+
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -36,7 +37,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          {/* <nav className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link, index) => (
               <a
                 key={index}
@@ -46,19 +47,22 @@ const Footer = () => {
                 {link.name}
               </a>
             ))}
-          </nav>
+          </nav> */}
 
           {/* Social Links */}
           <div className="flex gap-3">
             {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#FF6B4A] hover:scale-110 transition-all duration-300"
-              >
-                <social.icon size={18} />
-              </a>
+             <a
+  key={index}
+  href={social.href}
+  aria-label={social.label}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#FF6B4A] hover:scale-110 transition-all duration-300"
+>
+  <social.icon size={18} />
+</a>
+
             ))}
           </div>
         </div>

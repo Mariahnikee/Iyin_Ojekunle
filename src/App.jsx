@@ -6,7 +6,7 @@ import MainLayout from "./components/layout/Mainlayout";
 import Home from "./pages/home/Home";
 import Resources from "./pages/home/Resources";
 import Speaking from "./pages/home/Speaking";
-import Contact from "./pages/home/Contact";
+import Author from "./pages/home/Author"
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="resources" element={<Resources />} />
           <Route path="speaking" element={<Speaking />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="author" element={<Author />} />
          
         </Route>
       </Routes>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Heart, Book, Users, Mail } from "lucide-react";
+import { Menu, X, Heart, Book, Users, UserCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom"; // ✅ Import Link and useLocation
 
 const SideNavigation = () => {
@@ -18,9 +18,9 @@ const SideNavigation = () => {
   // ✅ Each nav item now points to a real route
   const navItems = [
     { name: "HOME", icon: Heart, path: "/" },
+    { name: "AUTHOR", icon: UserCircle, path: "/author" },
     { name: "RESOURCES", icon: Book, path: "/resources" },
     { name: "SPEAKING", icon: Users, path: "/speaking" },
-    { name: "CONTACT", icon: Mail, path: "/contact" },
   ];
 
   return (

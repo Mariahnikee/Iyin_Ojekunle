@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 function Resources() {
@@ -23,20 +24,41 @@ function Resources() {
             <span className="font-semibold"> "From Pain to Promise"</span> is a must-read for anyone seeking clarity, hope, and purpose in life.
           </p>
 
-          <button className="group bg-[#FF6B4A] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg">
-            Order Your Copy
-            <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          {/* <Link
+  to="https://www.amazon.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group bg-[#FF6B4A] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg"
+>
+  Order Your Copy
+  <ArrowRight
+    size={22}
+    className="group-hover:translate-x-1 transition-transform"
+  />
+</Link>
+ */}
+         <Link
+  to="https://www.amazon.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group bg-[#FF6B4A] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#ff5a33] hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-lg"
+>
+  Order Your Copy
+  <ArrowRight
+    size={22}
+    className="group-hover:translate-x-1 transition-transform"
+  />
+</Link>
         </div>
 
-        {/* Book Image */}
-        <div className="relative flex justify-center">
+      {/* Book Image */}
+        <div className="relative flex justify-center md:justify-end">
           <div className="absolute inset-0 bg-linear-to-br from-[#FF6B4A]/20 to-transparent rounded-3xl blur-2xl transform -rotate-6"></div>
           <div className="relative group">
             <img
               src="bookcover.jpeg"
               alt="From Pain to Promise"
-              className="w-full max-w-md rounded-3xl shadow-2xl object-cover "
+              className="w-72 h-auto md:w-80 lg:w-96 rounded-2xl shadow-2xl object-cover transform transition-transform duration-500 group-hover:scale-105 group-hover:rotate-2"
             />
           </div>
         </div>
