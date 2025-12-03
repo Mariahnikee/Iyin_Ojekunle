@@ -13,11 +13,10 @@ const Footer = () => {
 
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Resources", href: "#resources" },
-    { name: "Speaking", href: "#speaking" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/home" },
+    { name: "Author", href: "/author" },
+    { name: "Resources", href: "/resources" },
+    { name: "Speaking", href: "/speaking" },
   ];
 
   return (
@@ -37,7 +36,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          {/* <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link, index) => (
               <a
                 key={index}
@@ -47,7 +46,7 @@ const Footer = () => {
                 {link.name}
               </a>
             ))}
-          </nav> */}
+          </nav>
 
           {/* Social Links */}
           <div className="flex gap-3">
